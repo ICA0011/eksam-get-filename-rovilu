@@ -9,11 +9,10 @@ def get_filename(URL):
     count = 0
     for body in elements:
         filename = body.text
-        if "file" in filename:
-            if count == 10:
-                return filename
-            count += 1
+        if count == 10:
+            return "http://upload.itcollege.ee/~aleksei/random_files//" + filename
+        count += 1
 
 
 if __name__ == "__main__":
-    print("File with index of 10 is:", get_filename(URL))
+    print("Element with index of 10 is " + get_filename(URL))
